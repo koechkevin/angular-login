@@ -1,0 +1,14 @@
+<form (ngSubmit)="onSubmit()">
+  <div class="head">
+    <span>Register</span>
+  </div>
+  <input type="text" placeholder="name" (blur)="errors.name = ''" [ngClass]="checkClass('name')" name="name" [(ngModel)]="registerData.name" />
+  <div class="error-message">{{errors.name || ''}}</div>
+  <input type="number" placeholder="phone" (blur)="errors['phone']= ''"  [ngClass]="checkClass('phone')" name="phone" [(ngModel)]="registerData.phone" />
+  <div class="error-message">{{errors.phone || ''}}</div>
+  <input type="email" placeholder="email" (blur)="errors.email = ''"  [ngClass]="checkClass('email')" name="email" [(ngModel)]="registerData.email" />
+  <div class="error-message">{{errors.email || ''}}</div>
+  <input type="password" placeholder="password" (blur)="errors.password = ''" [ngClass]="checkClass('password')" name="password" [(ngModel)]="registerData.password" />
+  <div class="error-message">{{errors.password || ''}}</div>
+  <input type="submit" />
+</form>
